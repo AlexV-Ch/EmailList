@@ -15,6 +15,7 @@ public void listEmail(String textEmail) {
     }
     if (kom.equals("LIST")) {
         System.out.println("Список адресов электронной почты");
+        printList(email);
         return;
     }
     if (words.length <= 1) {
@@ -25,7 +26,8 @@ public void listEmail(String textEmail) {
         System.out.println("Блок проверки адреса и добавления в список TreeSet");
 
         if (words[1].matches(regex)) {
-            System.out.println("Адрес соответствует шаблону");
+            email.add(words[1]);
+            System.out.println("Добавлен адрес " + words[1]);
         } else {
             System.out.println("Адрес не соответствует шаблону");
         }
@@ -34,4 +36,10 @@ public void listEmail(String textEmail) {
     }
 
 }
+private void printList(TreeSet<String> email) {
+    for (String eml : email) {
+        System.out.println(eml);
+    }
+}
+
 }
