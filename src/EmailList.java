@@ -7,7 +7,7 @@ public class EmailList {
 public void listEmail(String textEmail) {
     String[] words =textEmail.split("\\s+");
     String kom =words[0];
-    String regex = "[0-9a-zA-Z]+" + "[@]" + "[a-zA-Z]{2,3}";
+    String regex = "[0-9a-zA-Z]+" + "[@]" + "[a-zA-Z]+" +"\\."+ "[a-zA-Z]{2,3}";
 
     if (!kom.equals("ADD") && !kom.equals("LIST")) {
         System.out.println("Нет такой команды");
@@ -23,16 +23,12 @@ public void listEmail(String textEmail) {
         return;
     }
     if (kom.equals("ADD")) {
-        System.out.println("Блок проверки адреса и добавления в список TreeSet");
-
         if (words[1].matches(regex)) {
             email.add(words[1]);
             System.out.println("Добавлен адрес " + words[1]);
         } else {
             System.out.println("Адрес не соответствует шаблону");
         }
-
-        return;
     }
 
 }
