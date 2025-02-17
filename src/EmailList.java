@@ -32,8 +32,12 @@ public void listEmail(String textEmail) {
 
 }
 private void printList(TreeSet<String> email) {
+    if (!email.isEmpty()) {
     for (String eml : email) {
         System.out.println(eml);
+    }
+    }else {
+        System.out.println("Список адресов пуст");
     }
 }
 
