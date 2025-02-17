@@ -13,8 +13,7 @@ public void listEmail(String textEmail) {
         return;
     }
     if (kom.equals("LIST")) {
-        System.out.println("Список адресов электронной почты");
-        printList(email);
+          printList(email);
         return;
     }
     if (words.length <= 1) {
@@ -33,6 +32,7 @@ public void listEmail(String textEmail) {
 }
 private void printList(TreeSet<String> email) {
     if (!email.isEmpty()) {
+        System.out.println("Список адресов электронной почты");
     for (String eml : email) {
         System.out.println(eml);
     }
