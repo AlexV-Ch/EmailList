@@ -1,4 +1,3 @@
-import java.util.SortedMap;
 import java.util.TreeSet;
 
 public class EmailList {
